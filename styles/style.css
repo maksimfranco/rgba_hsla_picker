@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+body header,
+body footer {
+  flex: 0 0 60px;
+  width: 100%;
+  background-color: hsl(200deg, 20%, 20%);
+}
+body main {
+  width: 100%;
+  flex: 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.picker {
+  min-width: 260px;
+  max-width: 520px;
+  background-color: hsla(200deg, 20%, 30%, 0.85);
+  border: 6px solid hsl(200deg, 20%, 20%);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 1000ms ease;
+  max-height: 12px;
+  opacity: 0;
+}
+.picker.tighten {
+  max-height: 62px;
+  opacity: 1;
+}
+.picker.open {
+  max-height: 430px;
+  opacity: 1;
+}
+.picker_navigation {
+  display: flex;
+}
+.picker_navigation button {
+  color: hsl(200deg, 20%, 70%);
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  flex: 1 1;
+  height: 40px;
+  line-height: 20px;
+  background-color: hsl(200deg, 20%, 20%);
+  border: none;
+  transition: all 250ms ease;
+}
+.picker_navigation button:first-child:not(.active) {
+  border-radius: 0 0 5px 0;
+}
+.picker_navigation button:last-child:not(.active) {
+  border-radius: 0 0 0 5px;
+}
+.picker_navigation button:hover:not(.active) {
+  flex: 1.5 1;
+  transition: all 250ms ease;
+  cursor: pointer;
+}
+.picker_navigation button.active {
+  background-color: transparent;
+}
+.picker_content {
+  padding: 0 20px 20px 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.picker_setting {
+  width: 100%;
+}
+.picker_setting input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 6px;
+  background-color: hsl(200deg, 20%, 70%);
+  outline: none;
+  border-radius: 3px;
+}
+.picker_setting input[type=range] + input[type=range] {
+  margin-top: 40px;
+}
+.picker_setting input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: hsl(200deg, 20%, 70%);
+  border: 2px solid hsl(200deg, 20%, 20%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.picker_setting input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: hsl(200deg, 20%, 70%);
+  border: 2px solid hsl(200deg, 20%, 20%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.picker_result {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+.picker_result > div {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+.picker_result > div span {
+  color: hsl(200deg, 20%, 70%);
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+.picker_copy {
+  color: hsl(200deg, 20%, 70%);
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 40px;
+  margin-top: 30px;
+  background-image: url("../images/copy.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+  background-color: hsl(200deg, 20%, 20%);
+  border: 3px solid hsl(200deg, 20%, 20%);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.picker_copy:active {
+  background-size: 18px 18px;
+}
